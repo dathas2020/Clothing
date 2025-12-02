@@ -1,0 +1,188 @@
+/* Page background and centering */
+.page-root {
+  min-height: 100vh;
+  background-color: #0a0a0a; /* Dark background matching screenshot */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Card similar to the references */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #1a1a1a; /* Dark card background */
+  border-radius: 16px;
+  padding: 32px 24px 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo placeholder */
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #ff4b4b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Title */
+.login-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 24px;
+  color: #ffffff; /* White text on dark background */
+}
+
+/* Google button */
+.google-btn {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  padding: 10px 16px;
+  background-color: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.google-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 12px;
+  color: #888888; /* Lighter gray for dark background */
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #444444; /* Darker lines for dark background */
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* Form fields */
+.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  margin-top: 8px;
+  color: #ffffff; /* White labels */
+}
+
+.field-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #444444;
+  background-color: #2a2a2a; /* Dark input background */
+  color: #ffffff; /* White text in inputs */
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 1px;
+  border-color: #ffffff;
+}
+
+.field-input-error {
+  border-color: #d32f2f;
+}
+
+/* Error text */
+.field-error {
+  font-size: 12px;
+  color: #d32f2f;
+  margin-top: 4px;
+}
+
+/* Primary button */
+.primary-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  background-color: #333333; /* Dark gray button */
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #444444;
+}
+
+.primary-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* Text links */
+.link-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #4a9eff; /* Lighter blue for dark background */
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Status message for success/error */
+.status-message {
+  min-height: 18px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.status-message.success {
+  color: #1b5e20;
+}
+
+.status-message.error {
+  color: #d32f2f;
+}
+
