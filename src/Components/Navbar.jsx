@@ -24,7 +24,7 @@ function Navbar() {
           <Link to="/hoodies" style={styles.linkStyle}>Hoodies</Link>
           <Link to="/oversizedtees" style={styles.linkStyle}>Over-Sized Tees</Link>
           <Link to="/sweatpants" style={styles.linkStyle}>Sweat Pants</Link>
-          <Link to="/aboutus" style={styles.linkStyle}>About Us</Link>
+          <Link to="/input" style={styles.linkStyle}>Add Item</Link>
         </nav>
     </>
   )

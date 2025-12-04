@@ -1,11 +1,25 @@
-import React, { useState } from "react";
-import data from "../Context/Data.json";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-function Item({ index }) {
-  const item = data.Items[index];
+function Item() {
+  const { id } = useParams(); 
+  const [item, setItem] = useState(null); 
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState('M');
-  const sizes = ['XS', 'S', 'M', 'L', 'XL', '2XL'];
+  const [selectedSize, setSelectedSize] = useState("M");
+  const sizes = ["XS", "S", "M", "L", "XL", "2XL"];
+  const [displayImage, setDisplayImage] = useState("");
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/Items/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setItem(data);
+        setDisplayImage(data.image);
+      })
+      .catch((err) => console.error("Error fetching item:", err));
+  }, [id]);
+
+  if (!item) return <div style={{ padding: "50px", textAlign: "center" }}>Loading...</div>;
 
   const styles = {
     container: {
@@ -116,62 +130,93 @@ function Item({ index }) {
       marginBottom: "12px",
       borderRadius: "6px",
       cursor: "pointer",
-    }
+    },
   };
 
   const decrease = () => {
-    if (quantity > 1) 
-      setQuantity(quantity - 1);
+    if (quantity > 1) setQuantity(quantity - 1);
   };
 
   const increase = () => {
     setQuantity(quantity + 1);
   };
 
+  const addToCart = () => {
+  const cartItem = {
+    productId: item.id,
+    title: item.title,
+    price: item.price,
+    image: item.image,
+    size: selectedSize,
+    quantity: quantity
+  };
+
+  fetch("http://localhost:3001/cart", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(cartItem)
+  })
+    .then(() => {
+      alert("Added to cart!");
+    })
+    .catch(err => console.error("Error adding to cart:", err));
+};
+
+
   return (
     <>
       <div style={styles.container}>
-        {/* image side */}
+
+        {/* LEFT SIDE — IMAGES */}
         <div style={styles.leftSection}>
-          <img src={item.image} alt={item.title} style={styles.mainImage} />
-          
+          <img src={displayImage} alt={item.title} style={styles.mainImage} />
+
           <div style={styles.thumbnails}>
-            <img src={item.image} style={styles.thumb} />
-            <img src={item.alt} style={styles.thumb} />
+            <img
+              src={item.image}
+              style={styles.thumb}
+              onClick={() => setDisplayImage(item.image)}
+            />
+            <img
+              src={item.alt}
+              style={styles.thumb}
+              onClick={() => setDisplayImage(item.alt)}
+            />
           </div>
         </div>
 
-        {/* details side */}
+        {/* RIGHT SIDE — DETAILS */}
         <div style={styles.rightSection}>
           <div style={styles.title}>{item.title}</div>
-          <br></br>
 
           <span style={styles.price}>Rs. {item.price}</span>
-          <br></br>
 
+          {/* SIZE */}
           <div style={styles.sizeRow}>Size</div>
-
           <div style={styles.sizeButtons}>
             {sizes.map((size) => (
               <div
+                key={size}
                 onClick={() => setSelectedSize(size)}
                 style={selectedSize === size ? styles.sizeBtnActive : styles.sizeBtn}
-                >
-                  {size}
+              >
+                {size}
               </div>
             ))}
           </div>
 
+          {/* QUANTITY */}
           <div style={styles.quantityBox}>
             <div style={styles.qtyBtn} onClick={decrease}>−</div>
             <div style={styles.qtyNumber}>{quantity}</div>
             <div style={styles.qtyBtn} onClick={increase}>+</div>
           </div>
-          
-          <br></br>
 
-          <button style={styles.addToCartBtn}>Add to cart</button>
+          {/* ADD TO CART */}
+          <br />
+          <button style={styles.addToCartBtn} onClick={addToCart}>Add to cart</button>
         </div>
+
       </div>
     </>
   );

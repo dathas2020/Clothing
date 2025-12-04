@@ -13,13 +13,15 @@ function OverSizedTees() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      backgroundColor: "#8e8e8e",
+      paddingBottom: "15%"
     }
   }
 
   return (
     <div style={styles.total}>
-       <heading style={styles.headingStyle}> Over-Sized Tees </heading>
+       <header style={styles.headingStyle}> Over-Sized Tees </header>
        <TeesCollection/>
     </div>
   )

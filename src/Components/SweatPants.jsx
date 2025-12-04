@@ -13,13 +13,16 @@ function SweatPants() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      gap: "30px",
+      backgroundColor: "#8e8e8e",
+      paddingBottom: "15%"
     }
   }
 
   return (
     <div style={styles.total}>
-       <heading style={styles.headingStyle}> Sweat Pants </heading>
+       <header style={styles.headingStyle}> Sweat Pants </header>
        <PantsCollection/>
     </div>
   )

@@ -13,13 +13,16 @@ function Hoodies() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      gap: "10px",
+      backgroundColor: "#8e8e8e",
+      paddingBottom: "10%"
     }
   }
 
   return (
     <div style={styles.total}>
-       <heading style={styles.headingStyle}> HOODIES </heading>
+       <header style={styles.headingStyle}> HOODIES </header>
 
        <HoodiesCollection/>
     </div>

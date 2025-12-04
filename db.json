@@ -1,0 +1,357 @@
+{
+  "Items": [
+    {
+      "id": "00",
+      "type": "Tee",
+      "title": "NARCISSIST - GREY OVERSIZE TEE",
+      "price": "949.00",
+      "image": "/assets/tees/tee1/front.webp",
+      "alt": "/assets/tees/tee1/back.webp"
+    },
+    {
+      "id": "01",
+      "type": "Tee",
+      "title": "OPIUM PLAYBOY CARTI - BLACK OVERSIZE TEE",
+      "price": "899.00",
+      "image": "/assets/tees/tee2/front.webp",
+      "alt": "/assets/tees/tee2/back.webp"
+    },
+    {
+      "id": "02",
+      "type": "Tee",
+      "title": "WAVE TO EARTH - WHITE OVERSIZE TEE     ",
+      "price": "899.00",
+      "image": "/assets/tees/tee3/front.webp",
+      "alt": "/assets/tees/tee3/back.webp"
+    },
+    {
+      "id": "03",
+      "type": "Tee",
+      "title": "STRAY CATS BAND - RED OVERSIZE TEE",
+      "price": "949.00",
+      "image": "/assets/tees/tee4/front.webp",
+      "alt": "/assets/tees/tee4/back.webp"
+    },
+    {
+      "id": "04",
+      "type": "Tee",
+      "title": "STREET KITTY- WHITE OVERSIZE TEE",
+      "price": "949.00",
+      "image": "/assets/tees/tee5/front.webp",
+      "alt": "/assets/tees/tee5/back.webp"
+    },
+    {
+      "id": "05",
+      "type": "Tee",
+      "title": "PHANTOM - BLACK OVERSIZE TEE",
+      "price": "949.00",
+      "image": "/assets/tees/tee6/front.webp",
+      "alt": "/assets/tees/tee6/back.webp"
+    },
+    {
+      "id": "06",
+      "type": "Tee",
+      "title": "NANA OSAKI - GREY OVERSIZE TEE",
+      "price": "949.00",
+      "image": "/assets/tees/tee7/front.webp",
+      "alt": "/assets/tees/tee7/back.webp"
+    },
+    {
+      "id": "07",
+      "type": "Tee",
+      "title": "HELLO KITTY PUNK - BLACK OVERSIZE TEE",
+      "price": "900.00",
+      "image": "/assets/tees/tee8/front.webp",
+      "alt": "/assets/tees/tee8/back.webp"
+    },
+    {
+      "id": "08",
+      "type": "Tee",
+      "title": "ROCKSTAR CAT - BROWN OVERSIZE TEE",
+      "price": "899.00",
+      "image": "/assets/tees/tee9/front.webp",
+      "alt": "/assets/tees/tee9/back.webp"
+    },
+    {
+      "id": "09",
+      "type": "Tee",
+      "title": "Y2K STARBOY - BLACK OVERSIZE TEE",
+      "price": "969.00",
+      "image": "/assets/tees/tee10/front.webp",
+      "alt": "/assets/tees/tee10/back.webp"
+    },
+    {
+      "id": "10",
+      "type": "Tee",
+      "title": "MERCY IN RUIN - OVERSIZE TEE",
+      "price": "849.00",
+      "image": "/assets/tees/tee11/front.webp",
+      "alt": "/assets/tees/tee11/back.webp"
+    },
+    {
+      "id": "11",
+      "type": "Tee",
+      "title": "IMPERFECTION - BLACK OVERSIZE TEE",
+      "price": "999.00",
+      "image": "/assets/tees/tee12/front.webp",
+      "alt": "/assets/tees/tee12/back.webp"
+    },
+    {
+      "id": "12",
+      "type": "Tee",
+      "title": "Y2K STARBOY - RED OVERSIZE TEE",
+      "price": "979.00",
+      "image": "/assets/tees/tee13/front.webp",
+      "alt": "/assets/tees/tee13/back.webp"
+    },
+    {
+      "id": "13",
+      "type": "Tee",
+      "title": "NEWJEANS - WHITE OVERSIZE TEE",
+      "price": "969.00",
+      "image": "/assets/tees/tee14/front.webp",
+      "alt": "/assets/tees/tee14/back.webp"
+    },
+    {
+      "id": "14",
+      "type": "Tee",
+      "title": "DEVIL'S PREY - OVERSIZE TEE",
+      "price": "949.00",
+      "image": "/assets/tees/tee15/front.webp",
+      "alt": "/assets/tees/tee15/back.webp"
+    },
+    {
+      "id": "15",
+      "type": "Tee",
+      "title": "SINNER'S GOSPEL - OVERSIZE TEE",
+      "price": "900.00",
+      "image": "/assets/tees/tee16/front.webp",
+      "alt": "/assets/tees/tee16/front.webp"
+    },
+    {
+      "id": "16",
+      "type": "Hoodie",
+      "title": "KUROMI - WHITE OVERSIZED HOODIE",
+      "price": "1599.00",
+      "image": "/assets/hoodies/h1/front.webp",
+      "alt": "/assets/hoodies/h1/back.webp"
+    },
+    {
+      "id": "17",
+      "type": "Hoodie",
+      "title": "VENGEANCE - GREY OVERSIZED HOODIE",
+      "price": "1699.00",
+      "image": "/assets/hoodies/h2/front.webp",
+      "alt": "/assets/hoodies/h2/back.webp"
+    },
+    {
+      "id": "18",
+      "type": "Hoodie",
+      "title": "SAINT GOTHIC - BLACK OVERSIZED HOODIE",
+      "price": "1599.00",
+      "image": "/assets/hoodies/h3/front.webp",
+      "alt": "/assets/hoodies/h3/back.webp"
+    },
+    {
+      "id": "19",
+      "type": "Hoodie",
+      "title": "CINNAMOROLL - WHITE OVERSIZED HOODIE",
+      "price": "1599.00",
+      "image": "/assets/hoodies/h4/front.webp",
+      "alt": "/assets/hoodies/h4/back.webp"
+    },
+    {
+      "id": "20",
+      "type": "Hoodie",
+      "title": "HELLO KITTY - BLACK OVERSIZED HOODIE",
+      "price": "1599.00",
+      "image": "/assets/hoodies/h5/front.webp",
+      "alt": "/assets/hoodies/h5/back.webp"
+    },
+    {
+      "id": "21",
+      "type": "Hoodie",
+      "title": "CURSED GOTHIC - BLACK ZIP-UP HOODIE",
+      "price": "1499.00",
+      "image": "/assets/hoodies/h6/front.webp",
+      "alt": "/assets/hoodies/h6/back.webp"
+    },
+    {
+      "id": "22",
+      "type": "Hoodie",
+      "title": "MY MELODY - BLACK ZIP-UP HOODIE",
+      "price": "1499.00",
+      "image": "/assets/hoodies/h7/front.webp",
+      "alt": "/assets/hoodies/h7/back.webp"
+    },
+    {
+      "id": "23",
+      "type": "Hoodie",
+      "title": "NARCISSIST - BLACK ZIP-UP HOODIE",
+      "price": "1599.00",
+      "image": "/assets/hoodies/h8/front.webp",
+      "alt": "/assets/hoodies/h8/back.webp"
+    },
+    {
+      "id": "24",
+      "type": "Hoodie",
+      "title": "NARCISSIST - BLACK ZIP-UP HOODIE",
+      "price": "1599.00",
+      "image": "/assets/hoodies/h9/front.webp",
+      "alt": "/assets/hoodies/h9/back.webp"
+    },
+    {
+      "id": "25",
+      "type": "Pant",
+      "title": "SEEDHE MAUT - UNISEX LUNCH BREAK DRIP",
+      "price": "1299.00",
+      "image": "/assets/pants/p1/front.webp",
+      "alt": "/assets/pants/p1/back.webp"
+    },
+    {
+      "id": "26",
+      "type": "Pant",
+      "title": "PLAYBOI CARTI GLITCH - UNISEX SWEATPANTS",
+      "price": "1259.00",
+      "image": "/assets/pants/p2/front.webp",
+      "alt": "/assets/pants/p2/back.webp"
+    },
+    {
+      "id": "27",
+      "type": "Pant",
+      "title": "AFTER HOURS - UNISEX SWEATPANTS",
+      "price": "1299.00",
+      "image": "/assets/pants/p3/front.webp",
+      "alt": "/assets/pants/p3/back.webp"
+    },
+    {
+      "id": "28",
+      "type": "Pant",
+      "title": "HELLO KITTY - UNISEX SWEATPANTS",
+      "price": "100",
+      "image": "/assets/pants/p4/front.webp",
+      "alt": "/assets/pants/p4/back.webp"
+    },
+    {
+      "id": "29",
+      "type": "Pant",
+      "title": "PHANTOM UNISEX SWEATPANTS",
+      "price": "1299.00",
+      "image": "/assets/pants/p5/front.webp",
+      "alt": "/assets/pants/p5/back.webp"
+    },
+    {
+      "id": "30",
+      "type": "Pant",
+      "title": "RAGE UNISEX SWEATPANTS",
+      "price": "100",
+      "image": "/assets/pants/p6/front.webp",
+      "alt": "/assets/pants/p6/back.webp"
+    },
+    {
+      "id": "31",
+      "type": "Pant",
+      "title": "KUROMI CHAOS - UNISEX SWEATPANTS",
+      "price": "1350.00",
+      "image": "/assets/pants/p7/front.webp",
+      "alt": "/assets/pants/p7/back.webp"
+    },
+    {
+      "id": "32",
+      "type": "Pant",
+      "title": "FAST & FURIOUS - UNISEX SWEATPANTS",
+      "price": "1299.00",
+      "image": "/assets/pants/p8/front.webp",
+      "alt": "/assets/pants/p8/back.webp"
+    },
+    {
+      "id": "33",
+      "type": "Pant",
+      "title": "UNCHAINED - UNISEX SWEATPANTS",
+      "price": "100",
+      "image": "/assets/pants/p9/front.webp",
+      "alt": "/assets/pants/p9/back.webp"
+    },
+    {
+      "id": "34",
+      "type": "Pant",
+      "title": "EXORCIST PATCHWORK - UNISEX SWEATPANTS",
+      "price": "1299.00",
+      "image": "/assets/pants/p10/front.webp",
+      "alt": "/assets/pants/p10/back.webp"
+    },
+    {
+      "id": "35",
+      "type": "Pant",
+      "title": "TEKKEN DEVIL JIN - UNISEX SWEATPANTS",
+      "price": "1250.00",
+      "image": "/assets/pants/p11/front.webp",
+      "alt": "/assets/pants/p11/back.webp"
+    },
+    {
+      "id": "36",
+      "type": "Pant",
+      "title": "STREET KITTY - UNISEX SWEATPANTS",
+      "price": "1350.00",
+      "image": "/assets/pants/p12/front.webp",
+      "alt": "/assets/pants/p12/back.webp"
+    },
+    {
+      "id": "37",
+      "type": "Pant",
+      "title": "DARK KNIGHT - UNISEX SWEATPANTS",
+      "price": "1250.00",
+      "image": "/assets/pants/p13/front.webp",
+      "alt": "/assets/pants/p13/back.webp"
+    },
+    {
+      "id": "38",
+      "type": "Pant",
+      "title": "MONEY HEIST - UNISEX SWEATPANTS",
+      "price": "1250.00",
+      "image": "/assets/pants/p14/front.webp",
+      "alt": "/assets/pants/p14/back.webp"
+    },
+    {
+      "id": "39",
+      "type": "Pant",
+      "title": "DRAGONVEIL - UNISEX SWEATPANTS",
+      "price": "1250.00",
+      "image": "/assets/pants/p15/front.webp",
+      "alt": "/assets/pants/p15/back.webp"
+    },
+    {
+      "id": "40",
+      "type": "Pant",
+      "title": "CURSED OATH - UNISEX SWEATPANTS",
+      "price": "1250.00",
+      "image": "/assets/pants/p16/front.webp",
+      "alt": "/assets/pants/p16/back.webp"
+    },
+    {
+      "id": "bb33439d-1931-46f6-8cc0-6eeb0b23fd86",
+      "type": "Oversized-Tees",
+      "title": "test1",
+      "price": "99",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.canva.com%2Ft-shirts%2Ftemplates%2F&psig=AOvVaw0RU1tvj79tzflL_sdF0Eut&ust=1764951319271000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMCj9pSqpJEDFQAAAAAdAAAAABAE",
+      "alt": "https://www.istockphoto.com/photos/placeholder-image"
+    },
+    {
+      "id": "00d34605-332f-4de6-807c-9117af59c7d6",
+      "type": "Tee",
+      "title": "test2",
+      "price": "99",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.canva.com%2Ft-shirts%2Ftemplates%2F&psig=AOvVaw0RU1tvj79tzflL_sdF0Eut&ust=1764951319271000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMCj9pSqpJEDFQAAAAAdAAAAABAE",
+      "alt": "https://www.istockphoto.com/photos/placeholder-image"
+    },
+    {
+      "id": "fc93b2b0-c9f1-4ef4-b5d3-a684f580aece",
+      "type": "Tee",
+      "title": "test3",
+      "price": "99",
+      "image": "https://chriscross.in/cdn/shop/files/ChrisCrossRoyalblueCottontshirtmen.jpg?v=1740994595&width=2048",
+      "alt": "https://www.istockphoto.com/photos/placeholder-image"
+    }
+  ],
+  "cart": []
+}
