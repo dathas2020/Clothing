@@ -13,6 +13,7 @@ import Search from './Components/Search'
 import Cart from './Components/Cart'
 import Input from './Components/Input'
 import Footer from './Components/Footer'
+import Checkout from './Components/Checkout'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/search' element={<Search />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
 
         <Footer />

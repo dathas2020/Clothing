@@ -1,154 +1,206 @@
 import React, { useState } from "react";
 
 export default function Login() {
+  const [isSignup, setIsSignup] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  const styles = {
+    container: {
+      background: "#000",
+      minHeight: "100vh",
+      paddingTop: "60px",
+      color: "#fff",
+      textAlign: "center",
+    },
+    title: { 
+      fontSize: "48px", 
+      marginBottom: "40px" 
+    },
+    form: { 
+      width: "40%", 
+      minWidth: "300px", 
+      margin: "0 auto" 
+    },
+    input: {
+      width: "100%",
+      padding: "16px",
+      marginBottom: "10px",
+      border: "1px solid #888",
+      background: "transparent",
+      color: "#fff",
+      fontSize: "18px",
+    },
+    errorText: { 
+      color: "#ff4444", 
+      marginBottom: "10px" 
+    },
+    button: {
+      width: "200px",
+      padding: "16px",
+      background: "#333",
+      color: "#fff",
+      border: "none",
+      fontSize: "20px",
+      cursor: "pointer",
+      marginTop: "15px",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+    },
+    switchText: {
+      marginTop: "20px",
+      color: "#bbb",
+      textDecoration: "underline",
+      cursor: "pointer",
+    },
+  };
 
   const validate = () => {
     let temp = {};
-
-    if (!email.trim()) {
-      temp.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      temp.email = "Enter a valid email.";
-    }
-
-    if (!password.trim()) {
-      temp.password = "Password is required.";
-    }
+    if (!email) 
+      temp.email = "Email required";
+    if (!password) 
+      temp.password = "Password required";
 
     setErrors(temp);
     return Object.keys(temp).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const handleSignup = async () => {
+    setClicked(true);
+    if (!validate()) 
+      return;
 
-    if (validate()) {
-      alert("Login successful (dummy)!");
+    try {
+      await fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      alert("Signup successful!");
+      setEmail("");
+      setPassword("");
+      setErrors({});
+      setClicked(false);
+      setIsSignup(false); 
+    } catch {
+      alert("Signup failed.");
     }
   };
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setClicked(true);
+    if (!validate()) 
+      return;
+
+    const res = await fetch("http://localhost:3001/users");
+    const users = await res.json();
+
+    const found = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (found) {
+      localStorage.setItem("loggedInUser", JSON.stringify(found));
+      alert("Login successful!");
+      window.location.href = "/"; // redirect to home
+    } else {
+      alert("Invalid email or password");
+    }
+
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isSignup) {
+      handleSignup();
+    } else {
+      handleLogin(e);
+    }
+  };
+
+
   return (
-    <>
-      <style>{`
-        .login-container {
-          background: #000;
-          min-height: 100vh;
-          padding-top: 60px;
-          color: #fff;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+    <div style={styles.container}>
+      
+      {/* PAGE TITLE */}
+      <h1 style={styles.title}>{isSignup ? "Sign Up" : "Login"}</h1>
 
-        .login-title {
-          font-size: 48px;
-          margin-bottom: 40px;
-        }
+      {/* FORM */}
+      <form
+        onSubmit={handleSubmit}
+        style={styles.form}
+      >
+        {/* Email */}
+        <input
+          style={styles.input}
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {clicked && errors.email && (
+          <p style={styles.errorText}>{errors.email}</p>
+        )}
 
-        .login-form {
-          width: 40%;
-          min-width: 300px;
-        }
+        {/* Password */}
+        <input
+          style={styles.input}
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {clicked && errors.password && (
+          <p style={styles.errorText}>{errors.password}</p>
+        )}
 
-        .input-group {
-          margin-bottom: 25px;
-        }
+        {/* BUTTONS */}
+        {!isSignup ? (
+          <>
+            <button type="submit" style={styles.button}>
+              Login
+            </button>
 
-        .login-form input {
-          width: 100%;
-          padding: 18px;
-          background: transparent;
-          border: 1px solid #888;
-          color: #fff;
-          font-size: 20px;
-          outline: none;
-        }
+            <p
+              style={styles.switchText}
+              onClick={() => {
+                setIsSignup(true);
+                setClicked(false);
+                setErrors({});
+              }}
+            >
+              Create a new account
+            </p>
+          </>
+        ) : (
+          <>
+            <button
+              type="button"
+              style={styles.button}
+              onClick={handleSignup}
+            >
+              Sign Up
+            </button>
 
-        .input-error {
-          border-color: #ff4444 !important;
-        }
-
-        .error-text {
-          color: #ff4444;
-          margin-top: 6px;
-          font-size: 14px;
-        }
-
-        .forgot-link {
-          display: inline-block;
-          margin-bottom: 30px;
-          color: #bbb;
-          text-decoration: underline;
-          font-size: 16px;
-        }
-
-        .login-btn {
-          width: 200px;
-          padding: 18px;
-          background: #333;
-          color: #fff;
-          font-size: 22px;
-          border: none;
-          cursor: pointer;
-          display: block;
-          margin: 20px auto;
-        }
-
-        .login-btn:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-
-        .create-account {
-          display: block;
-          text-align: center;
-          color: #ccc;
-          font-size: 18px;
-          margin-top: 15px;
-          text-decoration: underline;
-        }
-      `}</style>
-
-      <div className="login-container">
-        <h1 className="login-title">Login</h1>
-
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="input-group">
-            <input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={submitted && errors.email ? "input-error" : ""}
-            />
-            {submitted && errors.email && (
-              <p className="error-text">{errors.email}</p>
-            )}
-          </div>
-
-          <div className="input-group">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={submitted && errors.password ? "input-error" : ""}
-            />
-            {submitted && errors.password && (
-              <p className="error-text">{errors.password}</p>
-            )}
-          </div>
-
-          
-          
-        </form>
-      </div>
-    </>
+            <p
+              style={styles.switchText}
+              onClick={() => {
+                setIsSignup(false);
+                setClicked(false);
+                setErrors({});
+              }}
+            >
+              Already have an account? Login
+            </p>
+          </>
+        )}
+      </form>
+    </div>
   );
 }

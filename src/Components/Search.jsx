@@ -1,80 +1,97 @@
-import React, { useState } from "react";
-import data from "../Context/Data.json";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Search() {
   const [query, setQuery] = useState("");
-  const navigate = useNavigate();
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/Items")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  }, []);
 
   const styles = {
     container: {
+      padding: 40,
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      padding: "40px",
-      fontFamily: "sans-serif",
     },
+
     input: {
       width: "60%",
-      padding: "12px 18px",
-      fontSize: "18px",
-      borderRadius: "8px",
-      border: "1px solid #aaa",
-      marginBottom: "20px",
+      padding: 12,
+      marginBottom: 20,
+      fontSize: 16,
     },
+
     results: {
       width: "60%",
       display: "grid",
       gridTemplateColumns: "repeat(4, 1fr)",
-      gap: "20px",
+      gap: 20,
     },
+
     card: {
+      background: "#8e8e8e",
+      borderRadius: 6,
+      paddingBottom: 10,
       cursor: "pointer",
-      backgroundColor: "#cfcfcf",
-      paddingBottom: "10px",
-      borderRadius: "6px",
+      textDecoration: "none",
+      color: "inherit",
     },
+
     img: {
       width: "100%",
-      borderRadius: "6px",
+      borderRadius: 6,
     },
+
     title: {
-      fontSize: "80%",
+      textAlign: "center",
       fontWeight: 600,
-      marginTop: "10px",
-      textAlign: "center",
+      marginTop: 8,
     },
+
     price: {
-      fontSize: "85%",
       textAlign: "center",
+      marginTop: 4,
     },
   };
 
-  const filtered = data.Items.filter((item) =>
+  const filtered = items.filter((item) =>
     item.title.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
     <div style={styles.container}>
+      {/* Search Box */}
       <input
         type="text"
         style={styles.input}
-        placeholder="Search for products..."
+        placeholder="Search products..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
 
+      {/* Results */}
       <div style={styles.results}>
-        {filtered.map((item, i) => (
-          <div
-            key={i}
-            style={styles.card}
-            onClick={() => navigate(`/item/${i}`)}
+        {filtered.map((item) => (
+          <Link
+            key={item.id}
+            to={`/item/${item.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
-            <img src={item.image} style={styles.img} />
-            <div style={styles.title}>{item.title}</div>
-            <div style={styles.price}>Rs. {item.price}</div>
-          </div>
+            <div style={styles.card}>
+              <img
+                src={item.image}
+                alt={item.title}
+                style={styles.img}
+              />
+              <div style={styles.title}>{item.title}</div>
+              <div style={styles.price}>Rs. {item.price}</div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

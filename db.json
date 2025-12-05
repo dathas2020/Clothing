@@ -351,7 +351,33 @@
       "price": "99",
       "image": "https://chriscross.in/cdn/shop/files/ChrisCrossRoyalblueCottontshirtmen.jpg?v=1740994595&width=2048",
       "alt": "https://www.istockphoto.com/photos/placeholder-image"
+    },
+    {
+      "id": "38a70a80-6522-405b-8a1f-34b8d2a8fc98",
+      "type": "Hoodie",
+      "title": "Hoodie Test Merch",
+      "price": "1499.99",
+      "image": "https://static.vecteezy.com/system/resources/thumbnails/052/967/985/small/comfortable-black-hoodie-with-drawstring-and-front-pocket-on-transparent-background-png.png",
+      "alt": "https://www.istockphoto.com/photos/placeholder-image"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "7a9b",
+      "productId": "27",
+      "title": "AFTER HOURS - UNISEX SWEATPANTS",
+      "price": "1299.00",
+      "image": "/assets/pants/p3/front.webp",
+      "size": "M",
+      "quantity": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "858b",
+      "email": "dathas2020@gmail.com",
+      "password": "dadfasdfadsfadf"
+    }
+  ],
+  "orders": []
 }

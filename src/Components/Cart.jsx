@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
+
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
   const styles = {
     container: {
@@ -96,13 +100,21 @@ function Cart() {
 
   const total = cart.reduce((sum, item) => sum + Number(item.price) * item.quantity, 0);
 
+  const handleCheckout = () => {
+    if (!user) {
+      alert("Please login before checkout.");
+      navigate("/login");
+    } else {
+      navigate("/checkout");
+    }
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.header}>Your cart</div>
 
       {cart.map(item => (
         <div key={item.id} style={styles.itemRow}>
-          
           <img src={item.image} width="100" alt="" />
 
           <div style={styles.productInfo}>
@@ -120,7 +132,6 @@ function Cart() {
           <div style={styles.deleteBtn} onClick={() => deleteItem(item)}>
             🗑
           </div>
-
         </div>
       ))}
 
@@ -128,7 +139,9 @@ function Cart() {
         Estimated total: Rs. {total}
       </div>
 
-      <button style={styles.checkoutBtn}>Check out</button>
+      <button style={styles.checkoutBtn} onClick={handleCheckout}>
+        Check out
+      </button>
     </div>
   );
 }
