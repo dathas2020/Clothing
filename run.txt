@@ -1,6 +1,4 @@
-Great! Here is a **professional, polished README.md** for your full project — including installation steps, technologies used, screenshots placeholders, and explanations of major components + CRUD operations.
-
-You can copy-paste this directly into your **README.md** file.
+This Text is generated through ChatGPT for clear instructions.
 
 ---
 
